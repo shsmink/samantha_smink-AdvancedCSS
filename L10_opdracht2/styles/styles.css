@@ -1,0 +1,91 @@
+body {
+  background-color: #c3cfe2;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.portfolio {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 30px 30px;
+      grid-template-areas: "." "." "." "." "." ".";
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  margin: 30px;
+}
+
+.portfolio__image {
+  margin: auto;
+  list-style: none;
+  position: relative;
+}
+
+.portfolio__image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.portfolio__image__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  background-color: #7da5e4;
+}
+
+.portfolio__image__overlay__btn {
+  color: black;
+  background-color: white;
+  font-size: 18px;
+  border: 1px solid lightgrey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Wanneer de overlay verschijnt, is deze alleen aan de onderkant iets langer dan de onderliggende afbeelding. Ik heb geen idee wat hiervan de oorzaak kan zijn.*/
+.portfolio__image:hover .portfolio__image__overlay {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  ul.portfolio {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px 30px;
+        grid-template-areas: ". ." ". ." ". .";
+  }
+}
+
+@media (min-width: 1024px) {
+  ul.portfolio {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    gap: 30px 30px;
+        grid-template-areas: ". . ." ". . .";
+  }
+}
+/*# sourceMappingURL=styles.css.map */
